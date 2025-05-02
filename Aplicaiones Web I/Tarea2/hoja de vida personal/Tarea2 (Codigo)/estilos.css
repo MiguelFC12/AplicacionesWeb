@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d3d4c2;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor {
+    width: 50%;
+    margin: auto;
+    background-color: #e6ebdf;
+    padding: 20px;
+}
+
+.foto {
+    text-align: center;
+}
+
+.foto img {
+    width: 120px;
+    border-radius: 50%;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+.seccion {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #d3d4c2;
+}
