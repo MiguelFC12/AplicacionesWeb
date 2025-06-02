@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Usuario - Sistema Talento ULEAM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/user_dashboard.css">
+    </head>
+<body>
+    <header class="main-header-top">
+        <div class="header-left">
+            <img src="../img/logo_uleam.png" alt="Logo ULEAM" class="header-logo">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="user_dashboard.html" class="nav-link"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="user_capacitaciones.html" class="nav-link"><i class="fas fa-graduation-cap"></i> Capacitaciones</a></li>
+                <li><a href="user_certificados.html" class="nav-link"><i class="fas fa-certificate"></i> Certificados</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <div class="user-profile-icon" id="userProfileIcon">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="user-dropdown" id="userDropdown">
+                <ul>
+                    <li><a href="perfil.html"><i class="fas fa-user-circle"></i> Ver Perfil</a></li>
+                    <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content-area">
+        <section class="section-novedades">
+            <h2><i class="fas fa-bullhorn"></i> Anuncios Importantes</h2>
+            <div class="novedades-container" id="novedadesContainer">
+                <div class="no-novedades-placeholder" id="noNovedadesPlaceholder">
+                    <i class="far fa-list-alt"></i>
+                    <p>Cargando anuncio...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../JS/user_dashboard.js"></script>
+    <script src="../JS/logout.js"></script>
+</body>
+</html>

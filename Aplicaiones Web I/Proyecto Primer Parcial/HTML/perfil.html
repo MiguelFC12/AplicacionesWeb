@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - Talento ULEAM</title>
+    <link rel="stylesheet" href="../CSS/user_dashboard.css">
+    <link rel="stylesheet" href="../CSS/perfil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="main-header-top">
+        <div class="header-left">
+            <img src="../img/logo_uleam.png" alt="Logo ULEAM" class="header-logo">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="user_dashboard.html" class="nav-link"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="user_capacitaciones.html" class="nav-link"><i class="fas fa-graduation-cap"></i> Capacitaciones</a></li>
+                <li><a href="user_certificados.html" class="nav-link"><i class="fas fa-certificate"></i> Certificados</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <div class="user-profile-icon" id="userProfileIcon">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="user-dropdown" id="userDropdown">
+                <ul>
+                    <li><a href="perfil.html" class="nav-link"><i class="fas fa-user-circle"></i> Ver Perfil</a></li>
+                    <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content-perfil">
+        <div class="perfil-header">
+            <h1>Mi Perfil</h1>
+            </div>
+
+        <div class="perfil-container">
+            <div class="card perfil-details-card">
+                <h2>Datos del Usuario</h2>
+                <div class="profile-info-grid">
+                    <div class="info-item">
+                        <label>Nombres:</label>
+                        <p id="profileNombre">Fuentes Cedeño Jose Miguel</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Cédula:</label>
+                        <p id="profileCedula">2222222222</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Correo:</label>
+                        <p id="profileCorreo">123@uleam.edu.ec</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Teléfono:</label>
+                        <p id="profileTelefono">111111111</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Área de trabajo:</label>
+                        <p id="profileAreaTrabajo">Docente</p>
+                    </div>
+                </div>
+                
+                <button class="action-button primary-button mt-20" id="editProfileBtnBottom"><i class="fas fa-edit"></i> Editar Perfil</button>
+            </div>
+
+            <div class="card capacitaciones-summary-card">
+                <h2>Resumen de Capacitaciones</h2>
+                <div class="summary-item">
+                    <span>Asistidas:</span>
+                    <span class="summary-value" id="summaryAsistidas">16</span>
+                </div>
+                <div class="summary-item">
+                    <span>Pendientes:</span>
+                    <span class="summary-value" id="summaryPendientes">4</span>
+                </div>
+                <div class="summary-item">
+                    <span>No Asistidas:</span>
+                    <span class="summary-value" id="summaryNoAsistidas">2</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../JS/user_dashboard.js"></script>
+    <script src="../JS/logout.js"></script>
+    <script src="../JS/perfil.js"></script> 
+</body>
+</html>

@@ -1,0 +1,354 @@
+:root {
+    --uleam-blue-dark: #003366; 
+    --uleam-blue-light: #005293;
+    --uleam-yellow: #FFD700; 
+    --text-color-dark: #333;
+    --text-color-light: #f8f8f8;
+    --background-light-grey: #F0F2F5;
+    --card-background: #FFFFFF;
+    --border-color: #e0e0e0;
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --button-green: #28a745; 
+    --announcement-color: #d8572a; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light-grey);
+    color: var(--text-color-dark);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-header-top {
+    background-color: var(--uleam-blue-dark);
+    color: var(--text-color-light);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1000;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    height: 40px;
+    filter: brightness(0) invert(1);
+    margin-right: 10px;
+}
+
+.uleam-text {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--text-color-light);
+}
+
+.main-nav {
+    flex-grow: 1; 
+    text-align: center; 
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; 
+    gap: 30px;
+}
+
+.main-nav .nav-link {
+    color: var(--text-color-light);
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+    display: flex; 
+    align-items: center;
+}
+
+.main-nav .nav-link i {
+    margin-right: 8px;
+}
+
+.main-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: var(--uleam-yellow);
+    left: 0;
+    bottom: -8px;
+    transition: width 0.3s ease;
+}
+
+.main-nav .nav-link:hover::after,
+.main-nav .nav-link.active::after {
+    width: 100%;
+}
+
+.main-nav .nav-link.active {
+    color: var(--uleam-yellow);
+}
+
+.header-right {
+    position: relative;
+    margin-left: auto; 
+}
+
+.user-profile-icon {
+    width: 45px;
+    height: 45px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    font-size: 2.5em;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: none;
+    border: none;
+}
+
+.user-profile-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    background-color: var(--card-background);
+    box-shadow: var(--shadow-light);
+    border-radius: 8px;
+    overflow: hidden;
+    min-width: 160px; 
+    z-index: 1000;
+    display: none;
+}
+
+.user-dropdown.show {
+    display: block;
+}
+
+.user-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-dropdown li a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--text-color-dark);
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.user-dropdown li a:hover {
+    background-color: var(--background-light-grey);
+}
+
+.user-dropdown li a i {
+    margin-right: 10px;
+    color: var(--uleam-blue-light);
+}
+
+.main-content-area {
+    padding: 20px 30px;
+    flex-grow: 1; 
+}
+
+.section-novedades {
+    margin-top: 20px;
+}
+
+.section-novedades h2 {
+    font-size: 1.8em;
+    color: var(--uleam-blue-dark);
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.section-novedades h2 i {
+    margin-right: 10px;
+    color: var(--announcement-color);
+}
+
+.novedades-container {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    padding: 30px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.no-novedades-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 1.1em;
+    width: 100%;
+}
+
+.no-novedades-placeholder i {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: var(--announcement-color);
+}
+
+.no-novedades-placeholder p {
+    margin: 0;
+    font-style: normal;
+    color: var(--text-color-dark);
+    font-size: 1.2em;
+    line-height: 1.4; 
+}
+
+.novedad-card {
+    background-color: var(--background-light-grey);
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    text-align: left;
+    transition: transform 0.2s ease;
+}
+
+.novedad-card:hover {
+    transform: translateY(-3px);
+}
+
+.novedad-card h3 {
+    color: var(--uleam-blue-light);
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.novedad-card p {
+    color: var(--text-color-dark);
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.announcement-date { 
+    display: block;
+    font-size: 0.9em;
+    color: var(--gray-medium); 
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .main-header-top {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+    .header-left {
+        margin-bottom: 15px;
+        width: 100%;
+        justify-content: center;
+    }
+    .main-nav {
+        order: 3; 
+        width: 100%;
+        margin-top: 15px; 
+    }
+    .main-nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        width: 100%;
+    }
+    .main-nav .nav-link {
+        padding: 10px 0;
+        justify-content: center;
+    }
+    .header-right {
+        order: 2;
+        margin-top: 0; 
+        width: auto;
+        margin-left: auto; 
+        margin-right: auto;
+    }
+    .user-dropdown {
+        top: 55px;
+        left: 50%;
+        right: auto; 
+        transform: translateX(-50%); 
+    }
+    .main-content-area {
+        padding: 15px;
+    }
+    .section-novedades h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        text-align: center;
+        justify-content: center;
+    }
+    .novedades-container {
+        padding: 20px;
+    }
+    .no-novedades-placeholder p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-logo {
+        height: 35px;
+    }
+    .uleam-text {
+        font-size: 1.3em;
+    }
+    .user-profile-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 2em;
+    }
+    .main-nav .nav-link {
+        font-size: 1em;
+    }
+    .section-novedades h2 {
+        font-size: 1.3em;
+    }
+    .novedades-container {
+        padding: 15px;
+    }
+    .novedad-card {
+        padding: 12px 15px;
+    }
+}

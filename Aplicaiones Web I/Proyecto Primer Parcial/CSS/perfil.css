@@ -1,0 +1,410 @@
+:root {
+    --uleam-blue-dark: #003366; 
+    --uleam-blue-light: #005293;
+    --uleam-yellow: #FFD700; 
+    --text-color-dark: #333;
+    --text-color-light: #f8f8f8;
+    --background-light-grey: #F0F2F5;
+    --card-background: #FFFFFF;
+    --border-color: #e0e0e0;
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --button-green: #28a745; 
+    --announcement-color: #d8572a; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light-grey);
+    color: var(--text-color-dark);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-header-top {
+    background-color: var(--uleam-blue-dark);
+    color: var(--text-color-light);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    height: 40px;
+    filter: brightness(0) invert(1);
+    margin-right: 10px;
+}
+
+.uleam-text {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--text-color-light);
+}
+
+.main-nav {
+    flex-grow: 1; 
+    text-align: center; 
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; 
+    gap: 30px;
+}
+
+.main-nav .nav-link {
+    color: var(--text-color-light);
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+    display: flex; 
+    align-items: center;
+}
+
+.main-nav .nav-link i {
+    margin-right: 8px;
+}
+
+.main-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: var(--uleam-yellow);
+    left: 0;
+    bottom: -8px;
+    transition: width 0.3s ease;
+}
+
+.main-nav .nav-link:hover::after,
+.main-nav .nav-link.active::after {
+    width: 100%;
+}
+
+.main-nav .nav-link.active {
+    color: var(--uleam-yellow);
+}
+
+.header-right {
+    position: relative;
+    margin-left: auto; 
+}
+
+.user-profile-icon {
+    width: 45px;
+    height: 45px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    font-size: 2.5em;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: none;
+    border: none;
+}
+
+.user-profile-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    background-color: var(--card-background);
+    box-shadow: var(--shadow-light);
+    border-radius: 8px;
+    overflow: hidden;
+    min-width: 160px; 
+    z-index: 1000;
+    display: none;
+}
+
+.user-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-dropdown li a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--text-color-dark);
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.user-dropdown li a:hover {
+    background-color: var(--background-light-grey);
+}
+
+.user-dropdown li a i {
+    margin-right: 10px;
+    color: var(--uleam-blue-light);
+}
+
+@media (max-width: 768px) {
+    .main-header-top {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+    .header-left {
+        margin-bottom: 15px;
+    }
+    .main-nav {
+        order: 3; 
+        width: 100%;
+        margin-top: 15px; 
+    }
+    .main-nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        width: 100%;
+    }
+    .main-nav .nav-link {
+        padding: 10px 0;
+        justify-content: center;
+    }
+    .header-right {
+        order: 2;
+        margin-top: 0; 
+        width: auto;
+        margin-left: auto; 
+    }
+    .user-dropdown {
+        top: 55px;
+        left: auto;
+        right: 0; 
+        transform: translateX(0%); 
+    }
+}
+
+@media (max-width: 480px) {
+    .header-logo {
+        height: 35px;
+    }
+    .uleam-text {
+        font-size: 1.3em;
+    }
+    .user-profile-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 2em;
+    }
+    .main-nav .nav-link {
+        font-size: 1em;
+    }
+}
+
+.main-content-perfil {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: var(--background-light-grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.perfil-header {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.perfil-header h1 {
+    color: var(--uleam-blue-dark);
+    font-size: 2.2em;
+    margin: 0;
+    border-bottom: 2px solid var(--uleam-yellow);
+    padding-bottom: 10px;
+}
+
+.perfil-container {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    gap: 30px;
+    width: 100%;
+    max-width: 900px;
+    align-items: start;
+}
+
+.card {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    padding: 25px;
+}
+
+.card h2 {
+    color: var(--uleam-blue-light);
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.profile-info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.info-item label {
+    font-weight: bold;
+    color: var(--uleam-blue-dark);
+    font-size: 0.95em;
+}
+
+.info-item p {
+    font-size: 1.1em;
+    color: var(--text-color-dark);
+    margin: 0;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.info-item p:last-child {
+    border-bottom: none;
+}
+
+.action-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.action-button.primary-button {
+    background-color: var(--uleam-blue-light);
+    color: white;
+}
+
+.action-button.primary-button:hover {
+    background-color: #004480;
+    transform: translateY(-1px);
+}
+
+.action-button i {
+    font-size: 1.1em;
+}
+
+.capacitaciones-summary-card {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--border-color);
+    font-size: 1.05em;
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+}
+
+.summary-item span {
+    color: var(--text-color-dark);
+}
+
+.summary-value {
+    font-weight: bold;
+    color: var(--uleam-blue-dark);
+    font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+    .main-content-perfil {
+        padding: 20px;
+    }
+    .perfil-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .perfil-header {
+        text-align: center;
+    }
+    .perfil-header h1 {
+        font-size: 1.8em;
+    }
+    .profile-info-grid {
+        gap: 10px;
+    }
+    .action-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content-perfil {
+        padding: 15px;
+    }
+    .card {
+        padding: 20px;
+    }
+    .card h2 {
+        font-size: 1.4em;
+    }
+    .info-item label {
+        font-size: 0.9em;
+    }
+    .info-item p {
+        font-size: 1em;
+    }
+    .summary-item {
+        font-size: 1em;
+    }
+    .summary-value {
+        font-size: 1.1em;
+    }
+}

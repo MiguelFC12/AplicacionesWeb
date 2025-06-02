@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Certificados - Talento ULEAM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/user_certificados.css"> 
+    </head>
+<body>
+    <header class="main-header-top">
+        <div class="header-left">
+            <img src="../img/logo_uleam.png" alt="Logo ULEAM" class="header-logo">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="user_dashboard.html" class="nav-link"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="user_capacitaciones.html" class="nav-link"><i class="fas fa-graduation-cap"></i> Capacitaciones</a></li>
+                <li><a href="user_certificados.html" class="nav-link active"><i class="fas fa-certificate"></i> Certificados</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <div class="user-profile-icon" id="userProfileIcon">
+                <i class="fas fa-user-circle"></i> 
+            </div>
+            <div class="user-dropdown" id="userDropdown">
+                <ul>
+                    <li><a href="perfil.html"><i class="fas fa-user-circle"></i> Ver Perfil</a></li>
+                    <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content-certificados">
+        <div class="certificados-header">
+            <h1><i class="fas fa-certificate"></i> Mis Certificados</h1>
+        </div>
+
+        <div class="certificados-list" id="certificadosList">
+            <div class="certificado-card">
+                <div class="certificate-icon">
+                    <i class="fas fa-award"></i> </div>
+                <div class="card-details">
+                    <h3>Certificado de Herramientas Digitales Académicas</h3>
+                    <p>Emitido por: Departamento de Talento Humano ULEAM</p>
+                    <div class="card-meta">
+                        <span><i class="far fa-calendar-alt"></i> Fecha de emisión: 28 de Mayo, 2025</span>
+                        <span><i class="fas fa-building"></i> Modalidad: Presencial</span> 
+                        <span class="status-badge assisted"><i class="fas fa-check-circle"></i> Asistido</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="action-button download-pdf-btn" data-certificate-id="cert001">
+                        <i class="fas fa-download"></i> Descargar PDF
+                    </button>
+                </div>
+            </div>
+
+            <div class="certificado-card">
+                <div class="certificate-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="card-details">
+                    <h3>Certificado de Curso de Seguridad Informática</h3>
+                    <p>Emitido por: Departamento de Talento Humano ULEAM</p>
+                    <div class="card-meta">
+                        <span><i class="far fa-calendar-alt"></i> Fecha de emisión: 3 de Junio, 2025</span>
+                        <span><i class="fas fa-building"></i> Modalidad: Presencial</span> 
+                        <span class="status-badge assisted"><i class="fas fa-check-circle"></i> Asistido</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="action-button download-pdf-btn" data-certificate-id="cert002">
+                        <i class="fas fa-download"></i> Descargar PDF
+                    </button>
+                </div>
+            </div>
+
+            <div class="certificado-card">
+                <div class="certificate-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="card-details">
+                    <h3>Certificado de Liderazgo y Trabajo en Equipo</h3>
+                    <p>Emitido por: Departamento de Talento Humano ULEAM</p>
+                    <div class="card-meta">
+                        <span><i class="far fa-calendar-alt"></i> Fecha de emisión: 15 de Abril, 2024</span>
+                        <span><i class="fas fa-laptop"></i> Modalidad: Virtual</span>
+                        <span class="status-badge assisted"><i class="fas fa-check-circle"></i> Asistido</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="action-button download-pdf-btn" data-certificate-id="cert003">
+                        <i class="fas fa-download"></i> Descargar PDF
+                    </button>
+                </div>
+            </div>
+            
+            <div class="certificado-card">
+                <div class="certificate-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="card-details">
+                    <h3>Certificado de Gestión del Tiempo y Productividad</h3>
+                    <p>Emitido por: Departamento de Talento Humano ULEAM</p>
+                    <div class="card-meta">
+                        <span><i class="far fa-calendar-alt"></i> Fecha de emisión: 10 de Marzo, 2024</span>
+                        <span><i class="fas fa-laptop"></i> Modalidad: Virtual</span>
+                        <span class="status-badge assisted"><i class="fas fa-check-circle"></i> Asistido</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="action-button download-pdf-btn" data-certificate-id="cert004">
+                        <i class="fas fa-download"></i> Descargar PDF
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../JS/user_dashboard.js"></script> <script src="../JS/logout.js"></script>
+    <script src="../JS/user_certificados.js"></script> 
+</body>
+</html>

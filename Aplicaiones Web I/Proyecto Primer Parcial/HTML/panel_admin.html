@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Gestión Simplificada - ULEAM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/panel_admin.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <i class="fas fa-cubes"></i> ULEAM
+        </div>
+        <ul>
+            <li><a href="#" id="nav-capacitaciones" onclick="showSection('capacitaciones', this)"><i class="fas fa-chalkboard-teacher"></i> Capacitaciones</a></li>
+            <li><a href="#" id="nav-anuncios" onclick="showSection('anuncios', this)"><i class="fas fa-bullhorn"></i> Anuncios</a></li>
+            <li><a href="#" id="nav-certificados" onclick="showSection('certificados', this)" class="active"><i class="fas fa-certificate"></i> Certificados</a></li>
+            <li><a href="#" id="nav-perfil" onclick="showSection('perfil', this)"><i class="fas fa-user-circle"></i> Perfil</a></li>
+            </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+
+            <div id="section-capacitaciones" style="display: none;">
+                <h1><i class="fas fa-chalkboard-teacher"></i> Gestión de Capacitaciones</h1>
+                <div class="form-section">
+                    <h3>Crear Nueva Capacitación</h3>
+                    <label for="newCapacitacionName">Nombre:</label>
+                    <input type="text" id="newCapacitacionName" placeholder="Ej: Curso de Liderazgo" required>
+                    <label for="newCapacitacionDuration">Duración:</label>
+                    <input type="text" id="newCapacitacionDuration" placeholder="Ej: 40 horas" required>
+                    <label for="newCapacitacionDate">Fecha de Finalización:</label>
+                    <input type="date" id="newCapacitacionDate" required>
+                    <button onclick="addCapacitacion()"><i class="fas fa-plus-circle"></i> Agregar Capacitación</button>
+                </div>
+                <h3>Capacitaciones Activas</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Duración</th>
+                            <th>Fecha Fin</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="capacitacionesTableBody">
+                        </tbody>
+                </table>
+            </div>
+
+            <div id="section-anuncios" style="display: none;">
+                <h1><i class="fas fa-bullhorn"></i> Gestión de Anuncios</h1>
+                <div class="form-section">
+                    <h3>Crear Nuevo Anuncio</h3>
+                    <label for="newAnuncioTitle">Título:</label>
+                    <input type="text" id="newAnuncioTitle" placeholder="Ej: Mantenimiento del sistema" required>
+                    <label for="newAnuncioContent">Contenido:</label>
+                    <textarea id="newAnuncioContent" placeholder="Escribe aquí el cuerpo del anuncio..." required></textarea>
+                    <button onclick="addAnuncio()"><i class="fas fa-plus-circle"></i> Publicar Anuncio</button>
+                </div>
+                <h3>Anuncios Publicados</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Contenido (Extracto)</th>
+                            <th>Fecha Publicación</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="anunciosTableBody">
+                        </tbody>
+                </table>
+            </div>
+
+            <div id="section-certificados" style="display: block;">
+                <h1><i class="fas fa-certificate"></i> Gestión de Certificados</h1>
+                <hr>
+                <h2>1. Selecciona un Curso Finalizado para Certificar</h2>
+                <div class="gestion-list-grid" id="cursoList">
+                    </div>
+
+                <div id="cursoDetails" class="details-section" style="display: none;">
+                    <h3 id="selectedCursoTitle"><i class="fas fa-info-circle"></i> Detalles del Curso Seleccionado</h3>
+                    <p><strong>Duración:</strong> <span id="selectedCursoDuration"></span></p>
+                    <p><strong>Fecha de Finalización:</strong> <span id="selectedCursoDate"></span></p>
+                    <p><strong>Participantes Elegibles para Certificado:</strong></p>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre Completo</th>
+                                <th>Cédula</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="participantesTableBody">
+                            </tbody>
+                    </table>
+                    <div class="button-group">
+                        <button onclick="generarCertificados()"><i class="fas fa-check-circle"></i> Generar Certificados para este Curso</button>
+                    </div>
+                </div>
+
+                <hr>
+
+                <h2>2. Gestión de Certificados Emitidos</h2>
+                <div class="form-section">
+                    <h3>Crear/Editar Certificado</h3>
+                    <label for="certificadoCourseName">Nombre del Curso:</label>
+                    <input type="text" id="certificadoCourseName" placeholder="Ej: Programación Avanzada" required>
+                    <label for="certificadoParticipantName">Nombre del Participante:</label>
+                    <input type="text" id="certificadoParticipantName" placeholder="Ej: Juan Pérez" required>
+                    <label for="certificadoIssueDate">Fecha de Emisión:</label>
+                    <input type="date" id="certificadoIssueDate" required>
+                    <input type="hidden" id="editCertificadoId">
+                    <button onclick="addOrUpdateCertificado()" id="certSaveButton"><i class="fas fa-plus-circle"></i> Añadir Certificado</button>
+                    <button onclick="cancelEditCertificado()" id="certCancelButton" style="display:none; background-color:#6c757d; margin-left: 10px;"><i class="fas fa-times-circle"></i> Cancelar</button>
+                </div>
+                <h3>Certificados Existentes</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Curso</th>
+                            <th>Participante</th>
+                            <th>Fecha Emisión</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="certificadosTableBody">
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="section-perfil" style="display: none;">
+                <h1><i class="fas fa-user-circle"></i> Mi Perfil</h1>
+                <div class="form-section">
+                    <h3>Datos Personales</h3>
+                    <label for="profileName">Nombre Completo:</label>
+                    <input type="text" id="profileName" value="Talento Humano">
+                    <label for="profileEmail">Correo Electrónico:</label>
+                    <input type="email" id="profileEmail" value="departamentotalentohumanouleam@gmail.com">
+                    <label for="profileRole">Rol:</label>
+                    <input type="text" id="profileRole" value="Administrador" disabled>
+                    <button onclick="saveProfile()"><i class="fas fa-save"></i> Guardar Cambios</button>
+                </div>
+                <div class="form-section" style="margin-top: 20px;">
+                    <h3>Seguridad</h3>
+                    <label for="oldPassword">Contraseña Actual:</label>
+                    <input type="password" id="oldPassword">
+                    <label for="newPassword">Nueva Contraseña:</label>
+                    <input type="password" id="newPassword">
+                    <label for="confirmPassword">Confirmar Nueva Contraseña:</label>
+                    <input type="password" id="confirmPassword">
+                    <button onclick="changePassword()"><i class="fas fa-key"></i> Cambiar Contraseña</button>
+                </div>
+            </div>
+
+            </div>
+    </div>
+
+    <script src="../JS/panel_admin.js"></script>
+</body>
+</html>

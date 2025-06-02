@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario - ULEAM</title>
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="../img/logo_uleam.png"
+                 alt="Logo ULEAM"
+                 class="logo">
+        </div>
+        
+        <div class="content">
+            <h1 class="title">Registro de Usuario</h1>
+            
+            <div id="message" class="message" style="display:none;"></div> 
+            
+            <form id="registerForm" method="POST" action="/register"> 
+                <div class="form-group">
+                    <label for="nombres">Nombres:</label>
+                    <input type="text" id="nombres" name="nombres" placeholder="Ingrese sus nombres completos" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cedula">Cédula:</label>
+                    <input type="text" id="cedula" name="cedula" placeholder="Ingrese su número de cédula" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="correo" placeholder="ejemplo@uleam.edu.ec" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su número de teléfono" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena" placeholder="Cree una contraseña" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmar_contrasena">Confirmar Contraseña:</label>
+                    <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" placeholder="Confirme su contraseña" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="area">Área de trabajo:</label>
+                    <select id="area" name="area_trabajo" required>
+                        <option value="" selected disabled>Selecciona una opción</option>
+                        <option value="Decanato">Decanato</option>
+                        <option value="Vicedecanato">Vicedecanato</option>
+                        <option value="Direccion de Carrera">Dirección de Carrera</option>
+                        <option value="Docencia">Docencia</option>
+                        <option value="Investigacion">Investigación</option>
+                        <option value="Secretaria Academica">Secretaría Académica</option>
+                        <option value="Tecnico de Laboratorio">Técnico de Laboratorio</option>
+                        <option value="Soporte Informatico">Soporte Informático</option>
+                        <option value="Administracion de Redes">Administración de Redes</option>
+                        <option value="Desarrollo de Software Interno">Desarrollo de Software Interno</option>
+                        <option value="Vinculacion con la Sociedad">Vinculación con la Sociedad</option>
+                        <option value="Gestion Administrativa">Gestión Administrativa</option>
+                        <option value="Coordinacion de Proyectos">Coordinación de Proyectos</option>
+                        <option value="Ciberseguridad">Ciberseguridad</option>
+                        <option value="Inteligencia Artificial">Inteligencia Artificial</option>
+                        <option value="Bases de Datos">Bases de Datos</option>
+                        <option value="Desarrollo Web">Desarrollo Web</option>
+                        <option value="Robotica">Robótica</option>
+                        <option value="Analisis de Datos">Análisis de Datos</option>
+                        <option value="Gestion de Calidad">Gestión de Calidad</option>
+                        <option value="Asesoria Estudiantil">Asesoría Estudiantil</option>
+                    </select>
+                </div>
+                
+                <div class="button-group">
+                    <button type="button" class="btn btn-cancel" onclick="window.location.href='login.html'">Cancelar</button>
+                    <button type="submit" class="btn btn-save">Guardar</button>
+                </div>
+            </form> 
+        </div>
+        
+        <footer class="site-footer">
+            <p>&copy; 2025 Departamento de Talento Humano ULEAM.</p>
+            <p>Contacto: departamentotalentohumanouleam@gmail.com</p>
+        </footer>
+    </div>
+
+    <script src="../js/register.js"></script>
+</body>
+</html>

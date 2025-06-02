@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de Capacitación - Talento ULEAM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/user_capacitaciones.css">
+    <link rel="stylesheet" href="../CSS/course_details.css">
+</head>
+<body>
+    <header class="main-header-top">
+        <div class="header-left">
+            <img src="../img/logo_uleam.png" alt="Logo ULEAM" class="header-logo">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="user_dashboard.html" class="nav-link"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="user_capacitaciones.html" class="nav-link active"><i class="fas fa-graduation-cap"></i> Capacitaciones</a></li>
+                <li><a href="user_certificados.html" class="nav-link"><i class="fas fa-certificate"></i> Certificados</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <div class="user-profile-icon">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="user-dropdown">
+                <ul>
+                    <li><a href="perfil.html"><i class="fas fa-user-circle"></i> Ver Perfil</a></li>
+                    <li><a href="#"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content-details">
+        <div class="details-header">
+            <a href="user_capacitaciones.html" class="back-button"><i class="fas fa-arrow-left"></i> Volver a Capacitaciones</a>
+            <h1 id="courseTitle">Cargando Título del Curso...</h1>
+        </div>
+
+        <div class="course-details-card">
+            <div class="detail-section">
+                <h2><i class="fas fa-info-circle"></i> Descripción del Curso</h2>
+                <p id="courseDescription">Cargando descripción...</p>
+            </div>
+
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <h3><i class="far fa-calendar-alt"></i> Fecha</h3>
+                    <p id="courseDate">Cargando fecha...</p>
+                </div>
+                <div class="detail-item">
+                    <h3><i class="far fa-clock"></i> Duración</h3>
+                    <p id="courseDuration">Cargando duración...</p>
+                </div>
+                <div class="detail-item">
+                    <h3><i class="fas fa-laptop"></i> Modalidad</h3>
+                    <p id="courseModality">Cargando modalidad...</p>
+                </div>
+                <div class="detail-item">
+                    <h3><i class="fas fa-tag"></i> Tipo</h3>
+                    <p id="courseType" class="type-tag">Cargando tipo...</p>
+                </div>
+                <div class="detail-item">
+                    <h3><i class="fas fa-chalkboard-teacher"></i> Instructor</h3>
+                    <p id="courseInstructor">Cargando instructor...</p>
+                </div>
+                <div class="detail-item location-details" style="display: none;">
+                    <h3><i class="fas fa-map-marker-alt"></i> Ubicación</h3>
+                    <p id="courseLocation">Cargando ubicación...</p>
+                </div>
+                <div class="detail-item schedule-details" style="display: none;">
+                    <h3><i class="fas fa-calendar-check"></i> Horario</h3>
+                    <p id="courseSchedule">Cargando horario...</p>
+                </div>
+            </div>
+
+            <div class="detail-section" id="syllabusSection">
+                <h2><i class="fas fa-clipboard-list"></i> Temario</h2>
+                <ul id="courseSyllabus">
+                </ul>
+            </div>
+
+            <div class="detail-section virtual-activities-section" style="display: none;">
+                <h2><i class="fas fa-tasks"></i> Actividades del Curso</h2>
+                <ul id="virtualActivities">
+                </ul>
+            </div>
+
+            <div class="detail-section virtual-videos-section" style="display: none;">
+                <h2><i class="fas fa-video"></i> Videos del Curso</h2>
+                <div class="video-gallery" id="videoGallery">
+                </div>
+            </div>
+
+            </div>
+    </main>
+
+    <script src="../JS/course_details.js"></script>
+</body>
+</html>

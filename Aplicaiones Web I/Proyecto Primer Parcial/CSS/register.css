@@ -1,0 +1,195 @@
+:root {
+    --uleam-blue: #005293;
+    --uleam-gold: #FFD700;
+    --text-dark: #2E2E2E;
+    --gray-light: #F5F5F5;
+    --gray-medium: #6C757D;
+    --message-success-bg: #d4edda;
+    --message-success-text: #155724;
+    --message-error-bg: #f8d7da;
+    --message-error-text: #721c24;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif; 
+}
+
+body {
+    background-color: #F8F9FA;
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+    align-items: center; 
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px; 
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    flex-grow: 1; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+}
+
+.header {
+    padding: 1.5rem;
+    text-align: center;
+    background: linear-gradient(to right, var(--uleam-blue), #0077CC);
+}
+
+.logo {
+    max-width: 160px; 
+    height: auto;
+    filter: brightness(0) invert(1); 
+}
+
+.content {
+    padding: 2rem 1.5rem;
+    flex-grow: 1; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+
+.title {
+    color: var(--uleam-blue);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #DDD;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.form-group input::placeholder {
+    color: #AAA;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--uleam-blue);
+    box-shadow: 0 0 0 3px rgba(0, 82, 147, 0.2);
+    outline: none;
+}
+
+.form-group select {
+    appearance: none; 
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23005293'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1.5rem;
+    color: #555;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn {
+    flex: 1;
+    padding: 0.85rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    text-decoration: none; 
+    display: inline-block; 
+}
+
+.btn-cancel {
+    background: white;
+    color: var(--uleam-blue);
+    border: 2px solid var(--uleam-blue);
+}
+
+.btn-cancel:hover {
+    background: rgba(0, 82, 147, 0.05);
+}
+
+.btn-save {
+    background: var(--uleam-blue);
+    color: white;
+    border: none;
+}
+
+.btn-save:hover {
+    background: #004080;
+}
+
+.site-footer { 
+    padding: 1rem;
+    background: var(--gray-light);
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--gray-medium);
+}
+
+#message {
+    padding: 10px 15px;
+    margin: 15px auto;
+    border-radius: 8px;
+    font-size: 0.95em;
+    font-weight: bold;
+    text-align: center;
+    max-width: 90%;
+    display: none; 
+}
+
+#message.success {
+    background-color: var(--message-success-bg);
+    color: var(--message-success-text);
+    border: 1px solid #c3e6cb;
+}
+
+#message.error {
+    background-color: var(--message-error-bg);
+    color: var(--message-error-text);
+    border: 1px solid #f5c6cb;
+}
+
+
+@media (max-width: 480px) {
+    .header {
+        padding: 1rem;
+    }
+    .logo {
+        max-width: 120px;
+    }
+    .content {
+        padding: 1.5rem 1rem;
+    }
+    .button-group {
+        flex-direction: column; 
+    }
+}
